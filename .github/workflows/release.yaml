@@ -1,0 +1,39 @@
+name: Release Packaging
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  tests:
+    uses: ./.github/workflows/testing.yaml
+
+  changelog:
+    uses: ./.github/workflows/changelog.yaml
+
+  release:
+    name: Release Packaging
+    needs: [tests, changelog]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Release Build
+        run: go build -v ./cmd/senpai
+
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          gh release create "$tag" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${tag#v}" \
+              --generate-notes
