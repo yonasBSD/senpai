@@ -1,5 +1,8 @@
 ![](res/icon.128.png) ![](res/logo.png)
 
+![Build Status](https://github.com/yonasBSD/senpai/actions/workflows/testing.yaml/badge.svg?branch=dev)
+[![Coverage Status](https://coveralls.io/repos/github/yonasBSD/senpai/badge.svg?branch=dev)](https://coveralls.io/github/yonasBSD/senpai?branch=dev)
+
 *Welcome home, desune~*
 
 **A modern terminal IRC client.**
