@@ -2,6 +2,7 @@
 
 ![Build Status](https://github.com/yonasBSD/senpai/actions/workflows/testing.yaml/badge.svg?branch=dev)
 [![Coverage Status](https://coveralls.io/repos/github/yonasBSD/senpai/badge.svg?branch=dev)](https://coveralls.io/github/yonasBSD/senpai?branch=dev)
+[![License](https://img.shields.io/github/license/yonasBSD/senpai.svg)](https://github.com/yonasBSD/senpai/blob/main/LICENSE.txt)
 
 *Welcome home, desune~*
 
